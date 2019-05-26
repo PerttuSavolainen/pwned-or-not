@@ -1,2 +1,3 @@
-# serverless-express-boilerplate
-Serverless framework boilerplate with express
+# pwned-or-not
+
+To periodically see if your credentials have been compromised
