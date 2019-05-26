@@ -7,6 +7,9 @@ provider:
   profile: ${opt:profile}
   stage: ${opt:stage, "dev"}
   tracing: true # enable tracing
+  environment:
+    ACCOUNTS_TO_BE_CHECKED: ${env:ACCOUNTS_TO_BE_CHECKED}
+    SES_EMAIL_SENDER: ${env:SES_EMAIL_SENDER}
   iamRoleStatements:
     - Effect: "Allow" # xray permissions (required)
       Action:
@@ -19,6 +22,7 @@ plugins:
   - serverless-plugin-typescript
   - serverless-plugin-optimize
   - serverless-plugin-tracing
+  - serverless-dotenv-plugin
   - serverless-offline
 
 functions:
